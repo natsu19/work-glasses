@@ -1,0 +1,68 @@
+/*-- 間距 一單位為4px --*/
+$spacing-base:4px;
+$spacings:(
+    0:0 !important,
+    1:$spacing-base*1,   //4
+    2:$spacing-base*2,   //8
+    3:$spacing-base*3,   //12
+    4:$spacing-base*4,   //16
+    5:$spacing-base*5,   //20
+    6:$spacing-base*6,   //24
+    7:$spacing-base*7,   //28
+    8:$spacing-base*8,   //32
+    9:$spacing-base*9,   //36
+    10:$spacing-base*10, //40
+    11:$spacing-base*11, //44
+    12:$spacing-base*12, //48
+    15:$spacing-base*15, //60
+    20:$spacing-base*20  //80
+);
+/* margin-left */
+@each $name, $color in $spacings {
+    .ml-#{$name} {
+        margin-left:$color;
+    }
+}
+/* margin-right */
+@each $name, $color in $spacings {
+    .mr-#{$name} {
+        margin-right:$color;
+    }
+}
+/* margin-top */
+@each $name, $color in $spacings {
+    .mt-#{$name} {
+        margin-top:$color;
+    }
+}
+/* margin-bottom */
+@each $name, $color in $spacings {
+    .mb-#{$name} {
+        margin-bottom:$color;
+    }
+}
+
+/* padding-left */
+@each $name, $color in $spacings {
+    .pl-#{$name} {
+        padding-left:$color;
+    }
+}
+/* padding-right */
+@each $name, $color in $spacings {
+    .pr-#{$name} {
+        padding-right:$color;
+    }
+}
+/* padding-top */
+@each $name, $color in $spacings {
+    .pt-#{$name} {
+        padding-top:$color;
+    }
+}
+/* padding-bottom */
+@each $name, $color in $spacings {
+    .pb-#{$name} {
+        padding-bottom:$color;
+    }
+}

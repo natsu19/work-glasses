@@ -1,0 +1,72 @@
+
+@mixin pad{
+    @media (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin mobile{
+    @media (max-width:375px) {
+        @content;
+    }
+}
+
+
+.container{
+    max-width: 1140px; // 1110 + 30 gutter
+    margin: 0 auto;
+    padding: 0 15px;
+  
+    @include pad(){ // 690 + 30 gutter
+      max-width: 720px;
+    }
+    @include mobile(){
+      max-width: 405px; //375 + 30 gutter
+    }
+  }
+
+  
+/* 欄位 */
+$col:1/12*100% ; // 100/12=8.33333333
+
+
+.col{
+  padding: 0 15px;
+}
+
+
+$cols:(
+  1:$col*1,
+  2:$col*2,
+  3:$col*3,
+  4:$col*4,
+  5:$col*5,
+  6:$col*6,
+  7:$col*7,
+  8:$col*8,
+  9:$col*9,
+  10:$col*10,
+  11:$col*11,
+  12:$col*12
+);
+
+@each $name, $color in $cols {
+  .col-#{$name} {
+    width:$color;
+  }
+}
+@include pad(){
+  @each $name, $color in $cols {
+    .col-pad-#{$name} {
+      width:$color;
+    }
+  }
+}
+
+@include mobile(){
+  @each $name, $color in $cols {
+    .col-mobile-#{$name} {
+      width:$color;
+    }
+  }
+}

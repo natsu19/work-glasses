@@ -1,0 +1,36 @@
+.banner{
+    background: url(../images/banner.png) center;
+    background-size: cover;
+    height: calc(100vh - 118px); /*讓高度自適應目前畫面高度*/
+    color: map-get($colors,secondary);
+    text-align: right;
+
+    .container{
+        height: inherit;
+
+        span{
+            font-size: $font-base*2.25;
+        }
+
+        h2{
+            font-size: $font-base*4;
+            font-weight: bold;
+        }
+    }
+
+}
+
+%index-sub-title{
+    font-size:$font-2xl ;
+    margin-bottom: $spacing-base*12;
+    text-align: center;
+    font-weight: bold;
+}
+
+.intro{
+    
+    h2{
+        @extend %index-sub-title;
+        color: map-get($colors, secondary);    
+    }
+}

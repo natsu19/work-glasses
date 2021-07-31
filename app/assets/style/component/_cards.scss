@@ -1,0 +1,28 @@
+.card-4-row{
+    li{
+        width: $col*3;
+        text-align: center;
+        padding: 0 15px;
+
+        @include pad(){
+            width: $col*6;
+        }
+
+        @include mobile(){
+            width: $col*10;
+        }
+
+        img{
+            margin-bottom: map-get($spacings,6); 
+        }
+
+        h3{
+            font-size: $font-l;
+            color: map-get($colors,secondary);
+            margin-bottom: map-get($spacings,2);  
+        }
+        p{
+            text-align: left;
+        }
+    }
+}

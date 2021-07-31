@@ -1,0 +1,45 @@
+
+@mixin icon {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+.icon-facebook::before {
+   @include icon;
+    font-family: "Font Awesome 5 Brands"; 
+    content: "\f09a";
+  }
+
+  .icon-instagram::before {
+    @include icon;
+     font-family: "Font Awesome 5 Brands"; 
+     content: "\f16d";
+   }
+
+   .icon-line::before {
+    @include icon;
+     font-family: "Font Awesome 5 Brands"; 
+     content: "\f3c0";
+   }
+
+   .icon-phone::before {
+    @include icon;
+     font-family: "Font Awesome 5 Pro"; 
+     content: "\f879";
+   }
+
+   .icon-email::before {
+    @include icon;
+     font-family: "Font Awesome 5 Pro"; 
+     content: "\f0e0";
+   }
+
+   .icon-map::before {
+       @include icon;
+       font-family: "Font Awesome 5 Pro";
+       content: '\f3c5';
+   }

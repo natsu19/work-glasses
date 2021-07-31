@@ -1,0 +1,24 @@
+.d-flex{display: flex;}
+
+.flex-column{
+    flex-direction: column;
+}
+
+//justify-content
+.justify-content-between{
+    justify-content: space-between;
+}
+
+.justify-content-end{
+    justify-content: flex-end;
+}
+
+
+//align-items
+.align-items-center{
+    align-items: center;
+}
+
+//flex-wrap
+.flex-wrap-no{ flex-wrap: nowrap;}
+.flex-wrap{flex-wrap: wrap;}

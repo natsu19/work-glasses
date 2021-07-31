@@ -1,3 +1,30 @@
-@import url(_reset.scss);
 
-@import url(layout/_header.scss);
+//utilities
+
+@import "base/_reset";
+@import "utilities/_variables";
+
+@import "base/_base";
+@import "utilities/_grid";
+@import "utilities/_util";
+@import "utilities/_mixin";
+@import "utilities/_flex";
+
+
+// layout
+@import "layout/_header";
+@import "layout/_footer";
+
+//component
+@import "component/_icons";
+@import "component/_buttons";
+@import "component/_forms";
+@import "component/_cards";
+
+
+//pages
+@import "pages/_index";
+@import "pages/_product";
+@import "pages/_store";
+@import "pages/_blog";
+@import "pages/_faq";
