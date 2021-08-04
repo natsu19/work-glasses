@@ -1,56 +1,56 @@
 .footer{
-    background: map-get($colors, primary);
-    padding-top: $spacing-base*8; //32
-    padding-bottom: $spacing-base*10;  //40
-
     a{
         color: inherit;
-        position: relative;
-    }
-    //設定下底線
-    .bottom_nav a::after,.bottom-sub-nav a::after{
-        @include a-underline;
-    }
-
-    .bottom_nav a:hover::after,.bottom-sub-nav a:hover::after{
-        @include a-underline_hover;
-    }
-
-    .bottom_nav{
         
-        li{
-            margin-right: $spacing-base*12; //48
+    }
+    .bottom_nav ,.bottom-sub-nav{
+        a{
+            position: relative;
+            &::after{ @include a-underline;}  //設定下底線
+            &:hover::after{@include a-underline_hover;}  //設定下底線
         }
-    }
-
-  
-
-    .social-media{
-        font-size: $font-2xl;
-        line-height: 1;
-    }
-
-    .social-media a:hover , .contact a:hover{
-        @include a-opacity_hover;
     }
 
     .contact{
         font-size: $font-base*2.25; //36
-        border-bottom: 1px solid map-get($colors, light);
-
-        li{
-            margin-bottom: $spacing-base*4; //16
-        }
         span{
             margin-right: $spacing-base*5.5; //22
         }
     }
 
-
     .bottom-sub-nav{
-        li{
-            margin-left: $spacing-base*12;
-        }        
+        border-top: 1px solid $color-light;
+    }
+
+    @include pad(){
+        .social-media{
+            font-size: $font-lg;
+        }
+
+        .contact{
+            font-weight: $fw-regular;
+            font-size: $font-md;
+            span{
+                margin-right: 11px;
+            }
+        }
+    }
+
+    @include mobile(){
+        .bottom_nav{
+            display: none;
+        }
+        .contact{
+            order: 1;
+            font-size: $font-base;
+        }
+        .social-media{
+            order: 2;
+        }
+        .bottom-sub-nav{
+            font-size: $font-xs;
+        }
+
     }
 
 }

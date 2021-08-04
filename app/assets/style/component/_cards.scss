@@ -1,28 +1,120 @@
-.card-4-row{
+// img+h3+p 3列
+.card-4-row-3{
     li{
-        width: $col*3;
         text-align: center;
-        padding: 0 15px;
+        padding-left: $grid-gutter-width/2;
+        padding-right: $grid-gutter-width/2;
+
 
         @include pad(){
-            width: $col*6;
+
+            padding-left: $grid-gutter-width*1.5;
+            padding-right: $grid-gutter-width*1.5;
+
+            &:nth-child(1),&:nth-child(2){
+                margin-bottom: $spacing-base*11;
+            }
         }
 
         @include mobile(){
-            width: $col*10;
+            flex-direction: column;
+            align-items: center;
+            //padding: 0 $grid-gutter-width*2;
         }
 
         img{
-            margin-bottom: map-get($spacings,6); 
+            width: 85px;
+            height: 85px;
+            margin-bottom: $spacing-base*7;
         }
 
         h3{
-            font-size: $font-l;
-            color: map-get($colors,secondary);
-            margin-bottom: map-get($spacings,2);  
+            font-size: $font-lg;
+            color: $color-secondary;
+            margin-bottom: $spacing-base*2; 
+            font-weight: $fw-bold; 
         }
         p{
             text-align: left;
         }
+    
+        
     }
 }
+
+// img+3p 四列
+.card-4-row-4{
+    width: $col*12;
+    display: flex;
+    justify-content: space-between;
+
+    @include pad(){
+        flex-wrap: wrap;
+    }
+    @include mobile(){
+        justify-content: center;
+    }
+
+    li{
+        width: $col*3;
+        padding-right: $grid-gutter-width;
+
+        @include pad(){
+            width: $col*6;
+            &:nth-child(1),&:nth-child(2){
+                margin-bottom: $spacing-base*8;
+            }
+
+            &:nth-child(2){
+                padding-right: 0;
+            }
+        }
+        @include mobile(){
+            width: $col*12;
+            margin-bottom: $spacing-base*4;
+            padding: 0;
+            &:nth-child(4){
+                margin-bottom: 0;
+            }
+        }
+
+        .card{
+            box-shadow: 0px 2px 6px #00000029;
+            border:-1px solid #DEE2E6;
+            border-radius: 4px;
+            overflow: hidden;
+            height: 100%;
+            
+            //要特別注意
+            display: flex;
+            flex-direction: column;
+    
+            img{
+                width: 100%;
+                object-fit:cover;
+                height: 256px;
+                border-radius: 4px 4px 0 0;                
+            }
+        }
+        .body{
+            padding: $spacing-base*4;
+            // 填滿上下空隙
+            flex-grow:1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+    
+        .content{
+            margin-bottom: 52px;
+            .name { margin-bottom: $spacing-base*2; }
+        }
+    
+        .date{
+            color: #707070;
+        }   
+    }
+    
+}
+
+    

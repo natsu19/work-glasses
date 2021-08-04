@@ -1,0 +1,14 @@
+.btn{
+    border:0;
+    color: $color-light;
+}
+
+.from-btn-primary{
+    padding-top: $spacing-base*4;
+    padding-bottom: $spacing-base*4;
+    background-color: $color-primary;
+
+    &:hover{
+        background: $color-secondary;
+    }
+}

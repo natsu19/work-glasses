@@ -21,9 +21,25 @@
 }
 
 /* hover效果 - 透明度 */
-@mixin a-opacity_hover{
+@mixin a-hover_opacity{
     opacity: 0.7;
     transition: all 0.5s ease;
+    @content;    
+}
+
+@mixin a_transition{
+    transition: all 0.5s ease;
+    @content;
+}
+
+/* 背景混和遮罩 */
+@mixin bg-mask{
+    transition: all 0.5s ease-out;
+    background-color: rgba(255, 255, 255, 0.5);  //遮罩
+    background-blend-mode: screen; //背景混和模式
+    background-size: cover;
+    background-position: center center;
+    @content;
 }
 
 /* 圖片取代文字 */
@@ -33,3 +49,4 @@
     overflow: hidden;
     white-space: nowrap;
 }
+

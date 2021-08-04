@@ -1,56 +1,70 @@
 .header{
-   background: map-get($colors, primary);
+   background: $color-primary;
    padding:14px 40px;
+   @include pad{
+      padding-top: 9px;
+      padding-bottom: 9px;
+   }
 }
 
 .logo{
-    a{
+   a{
+      @include text-hiden;
       background:url(../images/logo.png) center center no-repeat;
       width: 80px;
       height: 80px;
-      margin-left: $spacing-base*12;  //48
-      @include text-hiden;
 
-      @include pad(){
-         margin-left: 0;
+      @include mobile(){
+         width: 100%;
+         height: 50px;
+         background-size: auto 58% ;
       }
    }
 }
 
-
-
 .nav{
+  li {
+     margin-right: $spacing-base*12; //48
+     text-align: center;
 
-
-   li {
-      margin-right: $spacing-base*12; //48
-      text-align: center;
-
-      @include pad(){
-         margin-right: 0;
-         margin-left: $spacing-base*10; //10
-      }
-
-      a{
-         //color: map-get($colors, light);
-         color:inherit;
+     @include pad(){
+        margin-right: 0;
+        margin-left: $spacing-base*10; //10
+     }
+     a{
+        color:$color-light;
+        font-size: $font-md;
+        display: block;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        position: relative;
+     } 
+     a::after{
+        @include a-underline;
+        bottom: 10px; // 指定位置
+     }
+     a:hover::after{
+        @include a-underline_hover;
+     }
+  }
+  @include mobile(){
+     li{
+         width: $col*6;
+         border: 1px solid $color-light;
          font-size: $font-md;
-         display: block;
-         padding-top: 30px;
-         padding-bottom: 30px;
-         position: relative;
-      } 
+         line-height: 45px;
+         margin: 0;
+         padding: 0;
 
-      
-      a::after{
-         @include a-underline;
-         bottom: 10px; // 指定位置
-      }
-
-      a:hover::after{
-         @include a-underline_hover;
-      }
+         a{
+            color:$color-light;
+            font-size: $font-md;
+            display: block;
+            padding: 0;
+         }
+         a::after,a:hover::after{
+            width: 0;
+         }
    }
-    
-
+  }
 }

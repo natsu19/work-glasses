@@ -4,11 +4,13 @@
 @import "base/_reset";
 @import "utilities/_variables";
 
+@import "utilities/_mixin";
 @import "base/_base";
 @import "utilities/_grid";
 @import "utilities/_util";
-@import "utilities/_mixin";
 @import "utilities/_flex";
+@import "utilities/_color";
+@import "utilities/_text";
 
 
 // layout

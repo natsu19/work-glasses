@@ -1,68 +1,99 @@
-/*-- 間距 一單位為4px --*/
-$spacing-base:4px;
-$spacings:(
-    0:0 !important,
-    1:$spacing-base*1,   //4
-    2:$spacing-base*2,   //8
-    3:$spacing-base*3,   //12
-    4:$spacing-base*4,   //16
-    5:$spacing-base*5,   //20
-    6:$spacing-base*6,   //24
-    7:$spacing-base*7,   //28
-    8:$spacing-base*8,   //32
-    9:$spacing-base*9,   //36
-    10:$spacing-base*10, //40
-    11:$spacing-base*11, //44
-    12:$spacing-base*12, //48
-    15:$spacing-base*15, //60
-    20:$spacing-base*20  //80
-);
-/* margin-left */
+/*-- size --*/
+.h-100{height: 100%;}
+.w-100{width: 100%;}
+
+/*-- 置中 --*/
+.m0a{ margin: 0 auto;}
+
+/*--間距--*/
+ 
 @each $name, $color in $spacings {
-    .ml-#{$name} {
-        margin-left:$color;
+    // margin-all
+    .ml-#{$name} { margin-left:$color;}
+    .mr-#{$name} { margin-right:$color;}
+    .mt-#{$name} { margin-top:$color;}
+    .mb-#{$name} { margin-bottom:$color;}
+    
+    //padding-all
+    .pl-#{$name} { padding-left:$color; }
+    .pr-#{$name} { padding-right:$color;}
+    .pt-#{$name} { padding-top:$color;}
+    .pb-#{$name} { padding-bottom:$color;}
+
+    //desktop only
+}
+@each $name, $color in $spacings {
+    @include desktop-only(){
+        // margin-desktop
+        .ml-lg-#{$name} { margin-left:$color;}
+        .mr-lg-#{$name} { margin-right:$color;}
+        .mt-lg-#{$name} { margin-top:$color;}
+        .mb-lg-#{$name} { margin-bottom:$color;}
+        
+        //padding-desktop
+        .pl-lg-#{$name} { padding-left:$color; }
+        .pr-lg-#{$name} { padding-right:$color;}
+        .pt-lg-#{$name} { padding-top:$color;}
+        .pb-lg-#{$name} { padding-bottom:$color;}
+
     }
 }
-/* margin-right */
 @each $name, $color in $spacings {
-    .mr-#{$name} {
-        margin-right:$color;
+    //pad only
+    @include pad(){
+        // margin-pad
+        .ml-md-#{$name} { margin-left:$color;}
+        .mr-md-#{$name} { margin-right:$color;}
+        .mt-md-#{$name} { margin-top:$color;}
+        .mb-md-#{$name} { margin-bottom:$color;}
+        
+        //padding-pad
+        .pl-md-#{$name} { padding-left:$color; }
+        .pr-md-#{$name} { padding-right:$color;}
+        .pt-md-#{$name} { padding-top:$color;}
+        .pb-md-#{$name} { padding-bottom:$color;}
     }
 }
-/* margin-top */
 @each $name, $color in $spacings {
-    .mt-#{$name} {
-        margin-top:$color;
-    }
-}
-/* margin-bottom */
-@each $name, $color in $spacings {
-    .mb-#{$name} {
-        margin-bottom:$color;
+    //mobile only
+    @include mobile(){
+        // margin-mobile
+        .ml-sm-#{$name} { margin-left:$color;}
+        .mr-sm-#{$name} { margin-right:$color;}
+        .mt-sm-#{$name} { margin-top:$color;}
+        .mb-sm-#{$name} { margin-bottom:$color;}
+        
+        //padding-mobile
+        .pl-sm-#{$name} { padding-left:$color; }
+        .pr-sm-#{$name} { padding-right:$color;}
+        .pt-sm-#{$name} { padding-top:$color;}
+        .pb-sm-#{$name} { padding-bottom:$color;}
     }
 }
 
-/* padding-left */
-@each $name, $color in $spacings {
-    .pl-#{$name} {
-        padding-left:$color;
-    }
+@include pad(){
+    .m-md-0-all { margin: 0 !important; }
+    .p-md-0-all { padding: 0 !important; } 
 }
-/* padding-right */
-@each $name, $color in $spacings {
-    .pr-#{$name} {
-        padding-right:$color;
-    }
+  
+@include mobile(){
+    .m-sm-0-all { margin: 0 !important; }
+    .p-sm-0-all { padding: 0 !important; }
 }
-/* padding-top */
-@each $name, $color in $spacings {
-    .pt-#{$name} {
-        padding-top:$color;
+
+
+
+.outbox{
+    padding-top: $spacing-base*15; //60
+    padding-bottom: $spacing-base*20;  //80
+
+    @include pad(){
+        padding-top: $spacing-base*10;  //40
+        padding-bottom: $spacing-base*14;  //56
     }
-}
-/* padding-bottom */
-@each $name, $color in $spacings {
-    .pb-#{$name} {
-        padding-bottom:$color;
+
+    @include mobile(){
+        padding-top: $spacing-base*8;  //40
+        padding-bottom: $spacing-base*10;  //56
     }
 }

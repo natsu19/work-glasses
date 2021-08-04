@@ -1,0 +1,48 @@
+/* font-weight */
+.fw-light{ font-weight: $fw-light;} //light
+.fw-regular{ font-weight: $fw-regular;} //regular
+.fw-medium{ font-weight: $fw-medium;} //Medium
+.fw-DemiBold{ font-weight: $fw-DemiBold;} //Semi Bold (Demi Bold)
+.fw-bold{ font-weight: $fw-bold;} //Bold
+.fw-black{ font-weight: $fw-black;} //Black (Heavy)
+
+/* font-style */
+.text-italic { font-style: italic;}
+
+/* line-height */
+.lh-0{ line-height: 0;}
+.lh-sm{ line-height: 1;}
+.lh-md{ line-height: 1.875;}
+.lh-lg{ line-height: 2.25;}
+
+/* font-size */
+.font-base{ font-size: $font-base;}  //16
+.font-sm{ font-size: $font-xs;}      //14
+.font-md{ font-size: $font-md;}      //20
+.font-lg{ font-size: $font-lg;}      //24
+.font-xl{ font-size: $font-xl;}      //32
+.font-2xl{ font-size: $font-2xl;}    //48
+.font-3xl{ font-size: $font-3xl;}    //64
+
+/* font-color */
+@each $name, $color in $colors {
+    .text-#{$name} {
+      color:$color;
+    }
+}
+
+/**/
+.text-center{ text-align: center;}
+.text-left{ text-align-last: left;}
+.text-right{ text-align: right;}
+
+@include pad{
+  .text-md-center{ text-align: center;}
+  .text-md-left{ text-align-last: left;}
+  .text-md-right{ text-align: right;}
+}
+@include mobile{
+  .text-sm-center{ text-align: center;}
+  .text-sm-left{ text-align-last: left;}
+  .text-sm-right{ text-align: right;}
+}

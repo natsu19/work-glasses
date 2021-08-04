@@ -1,36 +1,235 @@
-.banner{
-    background: url(../images/banner.png) center;
+/*--------------
+　　　Banner 
+---------------*/
+
+.heroImage{
+    background: url(../images/banner.png) top center no-repeat;
     background-size: cover;
     height: calc(100vh - 118px); /*讓高度自適應目前畫面高度*/
-    color: map-get($colors,secondary);
-    text-align: right;
 
+    @include pad(){
+        background: url(../images/banner-sm.png) top left no-repeat;
+        height: calc(100vh - 108px);
+    }
+
+    @include mobile(){
+        height: calc(100vh - 140px); /*讓高度自適應目前畫面高度*/
+        background-size: auto calc(100vh - 140px);
+    }
+    
     .container{
-        height: inherit;
-
         span{
             font-size: $font-base*2.25;
+
+            @include pad(){
+                font-size: $font-md;
+                font-weight: $fw-medium;
+            }
+
+            @include mobile(){
+                font-size: $font-base;
+            }
         }
 
         h2{
-            font-size: $font-base*4;
-            font-weight: bold;
+            font-size: $font-3xl;
+            font-weight: $fw-bold;
+
+            @include pad(){
+                font-size: $font-2xl;
+            }
+
+            @include mobile(){
+                font-size: $font-xl;
+            }
         }
     }
 
 }
 
-%index-sub-title{
-    font-size:$font-2xl ;
+/*-- index default H2 ----*/
+.subTitle-2xl-c{
+    font-size: $font-2xl;
     margin-bottom: $spacing-base*12;
     text-align: center;
-    font-weight: bold;
-}
+    font-weight: $fw-bold;
 
-.intro{
-    
-    h2{
-        @extend %index-sub-title;
-        color: map-get($colors, secondary);    
+    @include pad(){
+        font-size: $font-xl;
+        margin-bottom: $spacing-base*10;
+    }
+
+    @include mobile(){
+        font-size: $font-lg;
+        line-height: 2;
+        margin-bottom: $spacing-base*6;
     }
 }
+
+/*--------------
+　　 經典系列 
+---------------*/
+
+.classic-series{
+    li{
+        margin-bottom: $spacing-base*8;
+        @include pad(){
+            margin-bottom: $spacing-base*2;
+        }
+    }
+
+    a{
+        display: flex;
+        align-items: center;
+        position: relative;
+        
+        @include pad(){
+            flex-direction: row;
+        }
+
+        @include mobile(){
+            height: 134px;
+        }
+        
+        .img{
+            width: $col*7;
+    
+            @include mobile(){
+                width: $col*12;
+                position: absolute;
+                left: 0;
+                top: 0;
+                z-index: 0;
+            }
+        }
+        h3{
+            width: $col*5;
+            padding-left:$spacing-base*8;
+            font-size: $font-2xl;
+            color: $color-primary;
+    
+            @include pad(){
+                font-size: $font-base*1.75;
+            }
+        
+            @include mobile(){
+                font-size: $font-base*1.75;
+                z-index: 1;
+                width: 100%;
+                text-align: center;
+            }
+    
+            img{
+                margin-right: $spacing-base*5.5;
+                @include pad(){
+                    height: 100%;
+                    width: 36px;    
+                    margin-right: $spacing-base*2.5;
+                }
+            
+                @include mobile(){
+                    
+                }
+            }
+        }
+    }
+}
+
+
+/*--------------
+　　聯名設計品牌 
+---------------*/
+
+.co-branded{
+    background: url(../images/bg.png) center;
+    li{
+        text-align: center;
+        color: $color-primary;
+        font-weight: $fw-bold;
+        font-size: $font-base*4.5;
+        height: 455px;
+
+        &:nth-child(1){
+            a{
+                background-image: url(../images/product-8.png);
+            }
+        }
+
+        &:nth-child(2){
+            a{
+                background-image: url(../images/product-9.png);
+            }
+        } 
+
+        @include pad(){
+            height: 278px;
+            font-size:$font-xl ;
+        }
+    
+        @include mobile(){
+            height: 291px;
+        }
+
+        a{
+            color: inherit;
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: relative;
+            @include bg-mask;
+        }
+
+        h3{
+            position: absolute;
+            top: 40%;
+            width: 100%;
+           
+        }
+
+        a:hover{
+            background-color: #ffffff00;
+        }
+    }
+}
+
+/*--------------
+　　聯絡我們 
+---------------*/
+.foreword{
+    margin-bottom: $spacing-base*5;
+    font-size: $font-lg;
+
+    @include pad(){
+        margin-bottom: $spacing-base*4;
+        font-size: $font-base;
+    }
+
+}
+
+%contac-input{
+    border: 1px solid $color-black;
+    background: none;
+ }
+
+.contact{
+    .label{
+        margin-bottom: $spacing-base;
+    }
+
+    .input-text{
+        @extend %contac-input;
+        padding: $spacing-base*3 $spacing-base*4;
+        height: 50px;
+    }
+
+    .textarea{
+        @extend %contac-input;
+        padding: $spacing-base*3 $spacing-base*4;
+    }
+
+    .check-label{
+        padding-left: 2px;        
+    }
+
+}
+
