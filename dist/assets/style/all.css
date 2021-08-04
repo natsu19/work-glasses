@@ -75,6 +75,12 @@ a {
   outline: none;
   box-shadow: 0 0 0 2px #cccccccc; }
 
+input[type="button"], input[type="submit"], input[type="reset"], input[type=text], input[type=password] {
+  -webkit-appearance: none; }
+
+textarea {
+  -webkit-appearance: none; }
+
 .container {
   max-width: 1140px;
   margin: 0 auto;
