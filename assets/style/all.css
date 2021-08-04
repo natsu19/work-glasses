@@ -75,9 +75,9 @@ a {
   outline: none;
   box-shadow: 0 0 0 2px #cccccccc; }
 
-input, textarea {
-  outline-style: none;
-  -webkit-appearance: none; }
+input[type=button] {
+  -webkit-appearance: none;
+  outline: none; }
 
 .container {
   max-width: 1140px;
