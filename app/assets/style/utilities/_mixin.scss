@@ -1,3 +1,28 @@
+@mixin pad{
+    @media (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin mobile{
+    @media (max-width:375px) {
+        @content;
+    }
+}
+
+//區域限定
+@mixin desktop-only{
+  @media (min-width: 769px) {
+      @content;
+  }
+}
+
+@mixin pad-only{
+  @media (min-width:376px) and (max-width: 768px) {
+      @content;
+  }
+}
+
 /* 設定hover效果- 下底線展開 */
 @mixin a-underline{
         content:'';
