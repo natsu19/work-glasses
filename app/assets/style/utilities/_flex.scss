@@ -23,6 +23,12 @@
     justify-content: space-between;
 }
 
+@include pad(){
+    .justify-content-md-between{
+        justify-content: space-between;
+    }
+}
+
 .justify-content-end{
     justify-content: flex-end;
 }

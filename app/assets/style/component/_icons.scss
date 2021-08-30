@@ -39,7 +39,15 @@
    }
 
    .icon-map::before {
-       @include icon;
-       font-family: "Font Awesome 5 Pro";
-       content: '\f3c5';
+    @include icon;
+    font-family: "Font Awesome 5 Pro";
+    content: '\f3c5';
    }
+
+   .icon-clock::before {
+    @include icon;
+    font-family: "Font Awesome 5 Pro";
+    content: '\f017';
+}
+
+   

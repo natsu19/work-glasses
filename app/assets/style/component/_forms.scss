@@ -1,0 +1,18 @@
+.form-select-label{
+    font-size: $font-lg;
+    @include pad(){
+        font-size: $font-base;;
+    }
+
+    @include mobile(){
+        font-size: $font-xs;
+    }
+}
+
+.form-select{
+    font-size: 18px;
+    line-height: 26px;
+    width: 100%;
+    padding: 8px 20px;
+    border: 1px solid #CED4DA;
+}

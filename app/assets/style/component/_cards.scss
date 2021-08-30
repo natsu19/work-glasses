@@ -47,17 +47,23 @@
     width: $col*12;
     display: flex;
     justify-content: space-between;
+    margin-left: -15px;
+    margin-right: -15px;
 
     @include pad(){
         flex-wrap: wrap;
+        margin-left: 0;
+        margin-right: 0;
     }
     @include mobile(){
         justify-content: center;
+        
     }
 
     li{
         width: $col*3;
-        padding-right: $grid-gutter-width;
+        padding-right: $grid-gutter-width/2;
+        padding-left: $grid-gutter-width/2;
 
         @include pad(){
             width: $col*6;
@@ -115,6 +121,70 @@
         }   
     }
     
+}
+
+//門市據點
+.img-tt-info-btn{
+    border: 1px solid rgba($color-black,0.2);
+    margin-bottom: $spacing-base * 8;
+    @include pad(){
+        margin-bottom: $spacing-base * 5;
+    }
+
+    @include mobile(){
+        margin-bottom: $spacing-base * 4;
+    }
+
+    &-img img{
+        @include img-height-fixed(224px);
+        @include pad(){
+            @include img-height-fixed(164px);
+        }
+    }
+
+    .card-title{
+        padding: $spacing-base * 3 $spacing-base * 6;
+        font-size: $font-lg;
+        border-bottom: 1px solid rgba($color-black,0.2);
+        @include pad(){
+            font-size: $font-base;
+        }
+        
+    }
+    .card-body{
+        padding: $spacing-base * 4 $spacing-base * 6;
+        font-size: $font-md;
+        @include pad(){
+            font-size: $font-xs;
+        }
+        li{
+            margin-bottom: $spacing-base * 2;
+            padding-left: 1.7rem;
+            text-indent: -0.7rem;
+            span{
+                margin-right: $spacing-base * 2;
+            }
+        }
+    }
+
+    .card-bottom{
+        a{  
+            display: inline-block;
+            width: 100%;
+            padding: $spacing-base * 5;
+            font-size: $font-md;
+            color: $color-light;
+            background: $color-black;
+            text-align: center;
+            @include pad(){
+                font-size: $font-xs;
+            }
+        }
+
+        a:hover{
+            @include a-hover_opacity;
+        }
+    }
 }
 
     

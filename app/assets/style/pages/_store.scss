@@ -1,0 +1,9 @@
+.map-box{
+        @include pad(){
+            @include img-height-fixed(422px);
+        }
+
+        @include mobile(){
+            @include img-height-fixed(211px);
+        }
+}

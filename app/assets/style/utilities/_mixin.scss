@@ -50,3 +50,11 @@
     white-space: nowrap;
 }
 
+@mixin img-height-fixed($height) {
+    width: 100%;
+    height: $height;
+    object-fit: cover;
+    @content;
+}
+
+

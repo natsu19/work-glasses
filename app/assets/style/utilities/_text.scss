@@ -24,6 +24,7 @@
 .font-2xl{ font-size: $font-2xl;}    //48
 .font-3xl{ font-size: $font-3xl;}    //64
 
+
 /* font-color */
 @each $name, $color in $colors {
     .text-#{$name} {
@@ -45,4 +46,10 @@
   .text-sm-center{ text-align: center;}
   .text-sm-left{ text-align-last: left;}
   .text-sm-right{ text-align: right;}
+}
+
+.h2-border-l{
+  border-left: 8px solid $color-primary;
+  padding-left: $spacing-base * 2;
+  margin-bottom: $spacing-base * 15;
 }
